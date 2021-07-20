@@ -1,7 +1,6 @@
-import React from "react";
 import { combineReducers } from "redux";
 
-const allSongsReducer = () => {
+const songsReducer = () => {
   return [
     {
       name: "macarena",
@@ -22,7 +21,7 @@ const allSongsReducer = () => {
   ];
 };
 
-const selectedSongsReducer = (selectedSong = {}, action) => {
+const selectedSongReducer = (selectedSong = {}, action) => {
   if (action.type === "SELECT_SONG") {
     return action.payload;
   }
@@ -30,6 +29,6 @@ const selectedSongsReducer = (selectedSong = {}, action) => {
 };
 
 export default combineReducers({
-  allSongs: allSongsReducer,
-  selectedSongs: selectedSongsReducer,
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
 });
